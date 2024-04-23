@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -9,13 +9,28 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ball.cpp \
+    blocks.cpp \
+    game.cpp \
+    health.cpp \
     main.cpp \
-    main.cpp
+    main.cpp \
+    player.cpp \
+    score.cpp
 
 HEADERS += \
-    main.h
+    ball.h \
+    blocks.h \
+    game.h \
+    health.h \
+    main.h \
+    player.h \
+    score.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Resources/Resources.qrc
