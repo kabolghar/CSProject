@@ -49,11 +49,15 @@ void Ball::move(){
             game->scene->removeItem(block);
             delete block;
         }
-        Player* player = dynamic_cast<Player*>(colliding_items[i]);\
+        Player* player = dynamic_cast<Player*>(colliding_items[i]);
             if(player){
             moveY=-1*moveY;
         }
+            if (pos().y()>600){
+            game->health->decrease();
+        }
     }
+
     reverseball();
     moveBy(moveX,moveY);
 }
