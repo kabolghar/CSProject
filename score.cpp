@@ -4,7 +4,7 @@ Score::Score(QGraphicsItem *parent): QGraphicsTextItem(parent){
     score=0;
     //display the text
     setPlainText("Score: " + QString::number(score));
-    setDefaultTextColor(Qt::black);
+    setDefaultTextColor(Qt::white);
     setFont(QFont("times",14));
 
 }

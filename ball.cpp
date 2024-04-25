@@ -36,6 +36,7 @@ void Ball::reverseball(){
         moveX=-1*moveX;
     }
 }
+
 void Ball::move(){
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for (size_t i = 0, n = colliding_items.size(); i < n; ++i){

@@ -5,19 +5,17 @@
 #include <QGraphicsTextItem>
 #include <QGraphicsView>
 #include <QGraphicsPixmapItem>
+#include <QGraphicsSceneMouseEvent>
 #include <QTimer>
 #include <QDebug>
 #include <QObject>
 
-class Player: public QObject, public QGraphicsPixmapItem
+class Player: public QObject, public QGraphicsRectItem
 {
-    Q_OBJECT
 public:
-    Player();
-    void keyPressEvent(QKeyEvent * event);
-    void collisonPlayer();
-public slots:
-    void spawn();
+    Player(QGraphicsItem* parent=NULL);
+    double getMidpoint();
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
 };
 
 #endif // PLAYER_H

@@ -1,4 +1,3 @@
-#include "ball.h"
 #include "player.h"
 #include "game.h"
 #include <QGraphicsItem>
@@ -12,40 +11,24 @@
 #include <QKeyEvent>
 #include <QMediaPlayer>
 #include <QAudioOutput>
+#include <QBrush>
 
 extern Game * game;
 
-Player::Player()
-{}
-
-void Player::keyPressEvent(QKeyEvent *event)
-{
-
-    if(event->key()== Qt::Key_Left || event->key() == Qt::Key_A)
-    {
-        if(x()>0)
-        {
-            collisonPlayer();
-            setPos(x()-10,y());
-        }
-    }
-    else if(event->key()== Qt::Key_Right || event->key() == Qt::Key_D)
-
-    {
-        collisonPlayer();
-        if(x()+80<800)
-            setPos(x()+10,y());
-    }
-
+Player::Player(QGraphicsItem *parent){
+    // draw rect
+    setRect(0,0,100,15);
+    QBrush brush;
+    brush.setStyle(Qt::SolidPattern);
+    brush.setColor(Qt::gray);
+    setBrush(brush);
 }
 
-void Player::collisonPlayer()
-{
-    QList<QGraphicsItem *> collison = collidingItems();
-    for (int i = 0; i<collison.size(); i++){
-        if (typeid (Ball) == typeid(*(collison[i]))){
+double Player::getMidpoint(){
+    return x()+rect().width()/2;
+}
 
-
-        }
-    }
+void Player::mouseMoveEvent(QGraphicsSceneMouseEvent *event){
+    double mouseX = mapToScene(event->pos()).x();
+    setPos(mouseX,y());
 }
