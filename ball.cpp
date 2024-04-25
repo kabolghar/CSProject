@@ -10,7 +10,9 @@
 #include <QBrush>
 #include "player.h"
 extern Game * game;
-Ball::Ball(QGraphicsItem *parent):QGraphicsRectItem(parent), QObject() {
+
+Ball::Ball(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
+
     setRect(0,0,30,30);//adjust starting position
     QBrush bluebrush(Qt::blue);
     setBrush(bluebrush);

@@ -3,16 +3,14 @@
 
 #include <QGraphicsTextItem>
 #include <QMessageBox>
-#include "score.h"
 class Health: public QGraphicsTextItem {
 public:
-    Health(Score *scoree, QGraphicsItem *parent = nullptr);
+    Health(QGraphicsItem *parent = nullptr);
     void decrease();
     int gethealth();
 private:
     int health;
     QMessageBox* msg = new QMessageBox;
-    Score *scoree;
 };
 
 

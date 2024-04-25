@@ -4,7 +4,7 @@
 #include "game.h"
 #include "score.h"
 extern Game * game;
-Health::Health(Score *scorei, QGraphicsItem *parent): QGraphicsTextItem(parent),scoree(scorei){
+Health::Health(QGraphicsItem *parent): QGraphicsTextItem(parent){
 
     health=3;
     //display the text
