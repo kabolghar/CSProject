@@ -9,8 +9,8 @@
 #include <QRect>
 #include <QDebug>
 #include <QKeyEvent>
-#include <QMediaPlayer>
-#include <QAudioOutput>
+// #include <QMediaPlayer>
+// #include <QAudioOutput>
 #include <QBrush>
 
 extern Game * game;

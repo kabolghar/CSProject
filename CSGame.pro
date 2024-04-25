@@ -1,4 +1,4 @@
-QT       += core gui multimedia
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,7 +13,6 @@ SOURCES += \
     blocks.cpp \
     game.cpp \
     health.cpp \
-    main.cpp \
     main.cpp \
     player.cpp \
     score.cpp
