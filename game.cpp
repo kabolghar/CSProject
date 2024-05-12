@@ -17,7 +17,7 @@ void Game:: startgame(){
    scene->addItem(ball);
     Player *player= new Player;
    player->setPos(250,725);
-    scene->addItem(player);
+   // scene->addItem(player);//error
    player->grabMouse();
     createbl();
 }
